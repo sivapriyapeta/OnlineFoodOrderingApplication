@@ -1,0 +1,149 @@
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.defaultIconColor{
+    color: #ffbd2f;
+}
+.defaultSecondaryFontColor{
+    color: #858789
+}
+.textAlignRight{
+    text-Align:right;
+}
+#mainHeader{
+    height: 40px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 0px;
+}
+.absoluteElements{
+    position: absolute;
+}
+#LoginOrRegisterSection{
+    text-decoration: none;
+}
+
+.topNavMargin{
+    margin-top: 5px;
+}
+#contactInfoSection{
+    text-decoration: none;
+    color: #414549;
+    font-weight: bold;
+    margin-left:15px;
+}
+#topNavDiv{
+    position: relative;
+}
+.menuSec{
+    background-color: #FFFFFF;
+}
+.logoStyles{
+    margin-top:20%;
+}
+.menuSecNavs{
+    margin-top:30px;
+    background-color: #FFFFFF !important;
+}
+.spanPill{
+    margin-left:12px;
+    margin-right:12px;
+}
+.navItemColor{
+    color:#9a9a9a;
+}
+.shoppingCartStyles{
+    margin-top: 3.5%;
+}
+.cartItems{
+    background-color:#ffbd2f;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    width: 21px;
+    height: 21px;
+    display: block;
+    top: -35px;
+    position: relative;
+    right: -10px;
+    line-height: 21px;
+    text-align: center;
+    border-radius: 50%;
+}
+.carousel-Image{
+    height:650px;
+    opacity:0.8;
+}
+#carouselIndicators{
+    margin-top:15px;
+    padding:0px;
+}
+.card{
+
+    width: 400px;
+    border:none;
+}
+.btr{
+
+    border-top-right-radius: 5px !important;
+}
+.btl{
+
+    border-top-left-radius: 5px !important;
+  }
+  
+.btn-dark {
+      color: #fff;
+      background-color:#ffbd2f;
+ }
+.btn-dark:hover {
+      color: #fff;
+      background-color:#ffbd2f;
+  }
+  .loginFormNavPills{
+    display:table !important;
+    width:100%;
+  }
+  .loginFormNavPills .nav-link {
+      border-radius: 0px;
+  }
+  .loginNavItem{
+        display: table-cell;
+  }  
+  .loginForm{
+    padding: 10px;
+    height: 300px;
+  }
+  .loginForm input{
+    margin-top : 13px;
+    border-radius: 3px;
+  }
+  .loginForm input:focus{
+    box-shadow: none;
+  }
+  .loginForm button{
+    margin-top: 20px;
+  }
+  .formPane{
+    background-color:#ffbd2f !important;
+  }
+  .loginFormNavPills .nav-link .active{
+    background-color:#ffbd2f !important;
+  }
+
+.inValid{
+    border:1px solid red !important;
+  }
+.valid{
+    border:1px solid greenyellow !important;
+}
+.modal-header{
+    border:0px;
+    margin-bottom:0px;
+    padding-bottom:0px;
+}
+.modalCloseButton{
+    float:right;
+}
