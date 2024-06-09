@@ -147,3 +147,7 @@ body{
 .modalCloseButton{
     float:right;
 }
+
+.menuImages{
+    height: 60%;
+}
