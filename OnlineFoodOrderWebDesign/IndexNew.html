@@ -19,7 +19,7 @@
   <body>
     <div class="container-fluid" id="mainContainer">
       <div id="content"></div>
-      <!-- <div class="row topNavDiv">
+      <div class="row topNavDiv">
         <img src="..\Images\main_bg.jpeg" id="mainHeader"> 
         <div class="çontainer absoluteElements topNavMargin">
           <div class="row">
@@ -76,12 +76,14 @@
                 </div>
               </nav>
             </div>
-            <div class="col-1 shoppingCartStyles">
-              <span class="fa fa-shopping-cart " aria-hidden="true"></span>
-              <span class="cartItems">0</span>
+            <div class="col-1 shoppingCartStyles cart-icon">
+              <span data-bs-toggle="modal" data-bs-target="#shoppingCartModal" id="shoppingCart">
+                <span class="fa fa-shopping-cart " aria-hidden="true"></span>
+                <span class="cartItems">0</span>
+              </span>
             </div>
         </div>
-      </section> -->
+      </section>
       <section onload="loadNav()">
         <div class="row">
           <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -155,6 +157,93 @@
           </div>
         </div>
       </section>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="card" style="width: 17rem;">
+              <img src="..\Images\Biriyani.jpeg" class="card-img-top menuImages" alt="...">
+              <h5 class="card-title">Chicken Biriyani</h5>
+              <div class="card-price">
+                <span class="price">$15.00</span>
+                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="card" style="width: 17rem;">
+              <img src="..\Images\Tiffins.jpeg" class="card-img-top menuImages" alt="...">
+              <h5 class="card-title">Mutton Biriyani</h5>
+              <div class="card-price">
+                <span class="price">$15.00</span>
+                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="card" style="width: 17rem;">
+              <img src="..\Images\Thalis.jpeg" class="card-img-top menuImages" alt="...">
+              <h5 class="card-title">Prawns Biriyani</h5>
+              <div class="card-price">
+                <span class="price">$15.00</span>
+                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="card" style="width: 17rem;">
+              <img src="..\Images\Beverages.jpeg" class="card-img-top menuImages" alt="...">
+              <h5 class="card-title">Egg Biriyani</h5>
+              <div class="card-price">
+                <span class="price">$15.00</span>
+                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="card" style="width: 17rem;">
+              <img src="..\Images\Sweets.jpeg" class="card-img-top menuImages" alt="...">
+              <h5 class="card-title">Mushroom Biriyani</h5>
+              <div class="card-price">
+                <span class="price">$15.00</span>
+                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="card" style="width: 17rem;">
+              <img src="..\Images\IceCream.jpeg" class="card-img-top menuImages" alt="...">
+              <h5 class="card-title">Vegetable Biriyani</h5>
+              <div class="card-price">
+                <span class="price">$15.00</span>
+                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="modal fade" id="shoppingCartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog cart-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn modalCloseButton" style="float:right;" data-bs-dismiss="modal">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex justify-content-center align-items-center">
+                <div class="card">
+                  <div class="sidebar" id="sidebar">
+                    <!-- <div class="sidebar-close">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                    </div> -->
+                    <div class="cart-menu">
+                        <h1>My Cart</h1>
+                        <div class="cart-tems">test 1</div>
+                    </div>
+                    <div class="sidebar--footer">
+                      <div class="total--amount">
+                        <h5>Total</h5>
+                        <div class="cart-total">$0.00</div>
+                      </div>
+                      <button class="checkout-btn">checkout</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
