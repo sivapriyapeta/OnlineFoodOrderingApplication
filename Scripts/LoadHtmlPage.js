@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function addItemsToCart(){
     const addCartToButtons = document.querySelectorAll('.add-to-cart');
     const cartItemCount = document.querySelector('.cart-icon .cartItems');
     const cartItemsList = document.querySelector('.cart-tems');
@@ -71,17 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartTotal.textContent = `$${totalAmount.toFixed(2)}`;
         }  
     })
-});
-
-fetch("https://sivapriyapeta.github.io/food_application_api/menu.json")
-    .then((res) => {
-        if (!res.ok) {
-            throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-    })
-    .then((data) => data.Main_Menu.forEach(mainMenuElements))
-    .catch((error) => console.error("Unable to fetch data:", error));
+}
 
 function mainMenuElements (element, index, arr){
     arr[index] = document.querySelector('#mainMenuInfo').innerHTML +=
@@ -106,9 +96,18 @@ function SubMenuElements(element, index, arr){
                 <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
             </div>
         </div>`
+        attachClickEvent();
+}
+
+function attachClickEvent(){
+    const addCartToButtons = document.querySelectorAll('.add-to-cart');
+    addCartToButtons.forEach((item) => {
+        item.setAttribute("onClick", addItemsToCart());
+    })
 }
 
 const urls = [
+    'https://sivapriyapeta.github.io/food_application_api/menu.json',
     'https://sivapriyapeta.github.io/food_application_api/biryanisMenu.json',
     'https://sivapriyapeta.github.io/food_application_api/tiffinsMenu.json',
     'https://sivapriyapeta.github.io/food_application_api/thalisMenu.json',
@@ -116,20 +115,33 @@ const urls = [
     'https://sivapriyapeta.github.io/food_application_api/sweetsMenu.json',
     'https://sivapriyapeta.github.io/food_application_api/icecreamsMenu.json'
 ];
-urls.forEach((url) => {
-    fetch(url)
-    .then((res) => {
-        if (!res.ok) {
-            throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-    })
-    .then(data => {
-                    
-                data.Sub_Menu.forEach(SubMenuElements);
-                })
-    .catch((error) => console.error("Unable to fetch data:", error));
-})
+
+Promise.all(urls.map(url =>
+        fetch(url, {cache: 'no-store'})
+            .then(checkStatus)  // check the response of our APIs
+            .then(parseJSON)    // parse it to Json
+            .catch(error => console.log('There was a problem!', error))
+        ))
+        .then(data => { console.log(data)
+            data[0].Main_Menu.forEach(mainMenuElements)
+            data[1].Sub_Menu.forEach(SubMenuElements);
+            data[2].Sub_Menu.forEach(SubMenuElements);
+            data[3].Sub_Menu.forEach(SubMenuElements);
+            data[4].Sub_Menu.forEach(SubMenuElements);
+            data[5].Sub_Menu.forEach(SubMenuElements);
+            data[6].Sub_Menu.forEach(SubMenuElements);
+        })
+function checkStatus(response) {
+    if (response.ok) {
+        return Promise.resolve(response);
+    } else {
+        return Promise.reject(new Error(response.statusText));
+    }
+}
+
+function parseJSON(response) {
+    return response.json();
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 const categoryCheckboxes = document.querySelectorAll(".category-filter");
