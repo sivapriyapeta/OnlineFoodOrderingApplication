@@ -2,6 +2,7 @@
     --primary-color:#ffbd2f;
     --decent-color:#FFFFFF;
     --accent-color:#847a64;
+    --menu-color:#f7edb6;
     --font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -44,8 +45,14 @@ body{
 #topNavDiv{
     position: relative;
 }
-.menuSec{
-    background-color: var(--decent-color);
+/* .menuSec{
+    background-color: var(--menu-color);
+} */
+ #pill-tab-01, #pill-tab-02, #pill-tab-03{
+    font-size:25px;
+ }
+.menuSec > div {
+    padding-bottom: 2%;
 }
 .logoStyles{
     margin-top:20%;
@@ -80,23 +87,19 @@ body{
     border-radius: 50%;
 }
 .carousel-Image{
-    height:650px;
-    opacity:0.8;
+    height:40rem;
 }
-#carouselIndicators{
+/* #carouselIndicators{
     margin-top:15px;
     padding:0px;
-}
+} */
 .card{
-    width: 400px;
+    width: 350px !important;
     border:none;
 }
-.btr{
-    border-top-right-radius: 5px !important;
-}
-.btl{
+/* .btl{
     border-top-left-radius: 5px !important;
-}
+} */
 .btn-dark {
       color: var(--decent-color);
       background-color:var(--primary-color);
@@ -137,10 +140,10 @@ body{
   }
 
 .inValid{
-    border:1px solid red !important;
+    border:2px solid red !important;
   }
 .valid{
-    border:1px solid greenyellow !important;
+    border:2px solid rgb(23, 151, 40) !important;
 }
 .modal-header{
     border:0px;
@@ -148,23 +151,35 @@ body{
     padding-bottom:0px;
 }
 .modalCloseButton{
-    float:right;
+    margin-left:90%;
 }
 
 .menuImages{
     height: 60%;
+    cursor: pointer;
+}
+
+.subMenuImages{
+    height: 120px;
+    cursor: pointer;
+    width:100%;
+}
+
+.menuImages:hover, .subMenuImages:hover{
+    cursor: pointer;
 }
 
 .add-to-cart{
     background: var(--primary-color);
     color:var(--accent-color);
-    border-radius:50%;
-    padding:5px;
+    border-radius:15%;
+    padding:3px;
     cursor: pointer;
 }
 .add-to-cart:hover{
     color: var(--accent-color);
     box-shadow: rgb(0 0 0 / 30%) 0px 4px 4px;
+    cursor: pointer;
 }
 
 .cart-dialog{
@@ -172,7 +187,6 @@ body{
     position:fixed;
     top:0;
     right:0;
-    /* right: -300px; */
     background-color: var(--decent-color);
     box-shadow: -4px 0 6px rgba(0,0,0,0.1);
     transition:right 0.3s ease-in-out;
@@ -182,7 +196,7 @@ body{
     border-bottom-left-radius: 20px;
     margin-top:0px;
 }
-.sidebar.open{
+/* .sidebar.open{
     right:0;
 }
 .sidebar-close{
@@ -190,4 +204,91 @@ body{
     right:20px;
     top:10px;
     cursor:pointer;
+} */
+
+.removeBtn{
+    background-color: var(--primary-color);
+    margin-top:6%;
+    border:none;
+    margin-left:5%;
+}
+.cart-item-price{
+    margin-top:7%;
+}
+
+.cart-product-image{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+ul li.loginNavPills{
+    width: 45%;
+    text-align: center;
+}
+.total--amount{
+    margin-top:5%;
+}
+
+.cartCloseButton{
+    margin-left:30%;
+    margin-top:-5px;
+}
+
+.foodMenuItem.filtered {
+    display: none;
+}
+
+.itemTitle{
+    font-weight:bold;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: black;
+    font-weight:bold;
+}
+
+.nav-link{
+    color: black;
+}
+.carousel-heading{
+    margin-bottom: 10rem;
+    font-size: 80px;
+}
+
+span.carousel-text {
+    font-size: 20px;
+    display:block;
+}
+.infoIcon{
+    margin-right: 10px;
+    color:var(--primary-color)
+}
+
+.iconsList{
+    margin-left: 7rem;
+}
+
+li.list-group-item.specialFeatures {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 10%;
+    bottom: 1.25rem;
+    left: 10%;
+    padding-top: 1.25rem;
+    padding-right:2rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
+
+#carouselIndicators{
+    padding:0 !important;
 }

@@ -6,15 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="..\Bootstrap\bootstrap-5.3.3-dist\css\bootstrap.min.css" rel="stylesheet" type="text/css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <script src="..\Scripts\LoadHtmlPage.js"></script>
-    <script src="..\Scripts\Nav.js"></script>
-    <script src="..\Bootstrap\bootstrap-5.3.3-dist\js\bootstrap.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
-    <link href="..\Styles\Styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="..\Styles\Styles.css" rel="stylesheet" type="text/css">
+    <script src="..\Scripts\LoadHtmlPage.js"></script>
+    <script src="..\Bootstrap\bootstrap-5.3.3-dist\js\bootstrap.min.js"></script>
     <script src="..\jQuery\jquery.min.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
   </head>
   <body>
     <div class="container-fluid" id="mainContainer">
@@ -35,7 +31,7 @@
             </div>
             <div class="col-3 textAlignRight">
               <a href="#" id="LoginOrRegisterSection" class="defaultSecondaryFontColor">
-                <span data-bs-toggle="modal" data-bs-target="#exampleModal" id="loginName">Login</span>
+                <span data-bs-toggle="modal" data-bs-target="#loginModal" id="loginName">Login</span>
               </a>
             </div>
           </div>
@@ -47,35 +43,25 @@
             <div class="col-2">
               <img src="..\Images\logo.jpeg" class="logoStyles">
             </div>
-            <div class="col-7">
+            <div class="col-1"></div>
+            <div class="col-4">
               <nav class="navbar navbar-expand-lg navbar-light bg-light menuSecNavs">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0" role="tablist">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">HOME<span class="spanPill">|</span></a>
+                      <a class="nav-link active" id="pill-tab-01" data-bs-toggle="pill" href="#pill-tabpanel-01" role="tab" aria-controls="pill-tabpanel-01" aria-selected="true">Home &nbsp;&nbsp;&nbsp;&nbsp;|</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link navItemColor" href="#">ABOUT US<span class="spanPill">|</span></a>
+                      <a class="nav-link" id="pill-tab-02" data-bs-toggle="pill" href="#pill-tabpanel-02" role="tab" aria-controls="pill-tabpanel-02" aria-selected="false">Menu &nbsp;&nbsp;&nbsp;&nbsp;|</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link navItemColor" href="#">FEATURES<span class="spanPill">|</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link navItemColor" href="#">GALLERY<span class="spanPill">|</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link navItemColor" href="#">BLOG<span class="spanPill">|</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link navItemColor" href="#">MENU<span class="spanPill">|</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link navItemColor" href="#">CONTACTS</a>
+                      <a class="nav-link" id="pill-tab-03" data-bs-toggle="pill" href="#pill-tabpanel-03" role="tab" aria-controls="pill-tabpanel-03" aria-selected="false">Contact Us</a>
                     </li>
                   </ul>
                 </div>
               </nav>
             </div>
+            <div class="col-2"></div>
             <div class="col-1 shoppingCartStyles cart-icon">
               <span data-bs-toggle="modal" data-bs-target="#shoppingCartModal" id="shoppingCart">
                 <span class="fa fa-shopping-cart " aria-hidden="true"></span>
@@ -84,138 +70,276 @@
             </div>
         </div>
       </section>
-      <section onload="loadNav()">
-        <div class="row">
-          <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <div class="tab-content mt-2">
+        <div class="tab-pane active" id="pill-tabpanel-01" role="tabpanel" aria-labelledby="pill-tab-01">
+          <section>
+            <div class="row tab-pane active" id="main-pill-tabpanel-0" role="tabpanel" aria-labelledby="main-pill-tab-0"">
+              <div id="carouselIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="..\Images\Pancakes_Carousel_1.jpg" class="d-block w-100 carousel-Image" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <p class="carousel-heading">ORDER FOOD DELIVERY
+                        <span class="carousel-text">From Your Favourite Restaurant!</span>
+                      </p>
+                      <div class="row">
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-clock-o infoIcon" aria-hidden="true"></i>24/7 Delivery</span>
+                        </div>
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-cutlery infoIcon" aria-hidden="true"></i>1500 Varieties</span>
+                        </div>
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-truck infoIcon" aria-hidden="true"></i>Fast Delivery</span>
+                        </div>
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-bell infoIcon" aria-hidden="true"></i>Every Minute Updates</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="..\Images\FrenchCusisine_Carousel_2.jpeg" class="d-block w-100 carousel-Image" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <p class="carousel-heading">WE GET WHAT YOU LOVE
+                        <span class="carousel-text">From Your Favourite Restaurant!</span>
+                      </p>
+                      <div class="row">
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-clock-o infoIcon" aria-hidden="true"></i>24/7 Delivery</span>
+                        </div>
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-cutlery infoIcon" aria-hidden="true"></i>1500 Varieties</span>
+                        </div>
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-truck infoIcon" aria-hidden="true"></i>Fast Delivery</span>
+                        </div>
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-bell infoIcon" aria-hidden="true"></i>Every Minute Updates</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="..\Images\pizza_Carousel_3.jpeg" class="d-block w-100 carousel-Image" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="carousel-heading">ORDER TAKEAWAY ONLINE
+                        <span class="carousel-text">From Your Favourite Restaurant!</span>
+                      </h1>
+                      <div class="row">
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-clock-o infoIcon" aria-hidden="true"></i>24/7 Delivery</span>
+                        </div>
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-cutlery infoIcon" aria-hidden="true"></i>1500 Varieties</span>
+                        </div>
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-truck infoIcon" aria-hidden="true"></i>Fast Delivery</span>
+                        </div>
+                        <div class="col-3">
+                          <span class="list-group-item specialFeatures"><i class="fa fa-bell infoIcon" aria-hidden="true"></i>Every Minute Updates</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="..\Images\Pancakes_Carousel_1.jpeg" class="d-block w-100 carousel-Image" alt="...">
+          </section>
+        </div>
+        <div class="tab-pane" id="pill-tabpanel-02" role="tabpanel" aria-labelledby="pill-tab-02">
+          <section class="justify-content-center">
+            <div class="container">
+              <div class="row">
+                <h3 class="text-center mt-2 mb-5">Select to see varieties</h3>
               </div>
-              <div class="carousel-item">
-                <img src="..\Images\FrenchCusisine_Carousel_2.jpeg" class="d-block w-100 carousel-Image" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="..\Images\pizza_Carousel_3.jpeg" class="d-block w-100 carousel-Image" alt="...">
+              <div class="row" id="mainMenuInfo">
               </div>
             </div>
+          </section>
+          <section>
+            <div class="container collapse" id="biriyanis">
+              <div class="row">
+                <h3 class="text-center mt-5 mb-5">Biriyani Menu</h3>
+              </div>
+              <div class="mb-3">
+                <h5 class="">Filter Category</h3>
+                <label for="Vegetarian">Vegetarian</label>
+                <input style="margin-right: 20px" type="checkbox" id="Vegetarian" class="category-filter" value="Vegetarian" />
+                <label for="NonVegetarian">NonVegetarian</label>
+                <input style="margin-right: 20px" type="checkbox" id="NonVegetarian" class="category-filter" value="NonVegetarian" />
+                <label for="Eggetarian">Eggetarian</label>
+                <input style="margin-right: 20px" type="checkbox" id="Eggetarian" class="category-filter" value="Eggetarian" />
+              </div>
+              <div class="row mb-5" id="biriyanisMenu">
+              </div>
+              <p></p>
+              <p></p>
+            </div>
+          </section>
+          <section>
+            <div class="container collapse" id="tiffins">
+              <div class="row">
+                <h3 class="text-center mt-5 mb-5">Tiffins Menu</h3>
+              </div>
+              <div class="mb-3">
+                <h5 class="">Filter Category</h3>
+                <label for="Dosa">Dosa</label>
+                <input style="margin-right: 20px" type="checkbox" id="Dosa" class="category-filter" value="Dosa" />
+                <label for="Idly">Idly</label>
+                <input style="margin-right: 20px" type="checkbox" id="Idly" class="category-filter" value="Idly" />
+                <label for="Others">Vada</label>
+                <input style="margin-right: 20px" type="checkbox" id="Vada" class="category-filter" value="Vada" />
+                <label for="Others">Others</label>
+                <input style="margin-right: 20px" type="checkbox" id="Others" class="category-filter" value="Others" />
+              </div>
+              <div class="row mb-5" id="tiffinsMenu">
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="container collapse" id="thalis">
+              <div class="row">
+                <h3 class="text-center mt-5 mb-5">Thali Menu</h3>
+              </div>
+              <div class="mb-3">
+                <h5 class="">Filter Category</h3>
+                <label for="VegThali">VegThali</label>
+                <input style="margin-right: 20px" type="checkbox" id="VegThali" class="category-filter" value="VegThali" />
+                <label for="NonVegThali">NonVegThali</label>
+                <input style="margin-right: 20px" type="checkbox" id="NonVegThali" class="category-filter" value="NonVegThali" />
+              </div>
+              <div class="row mb-5" id="thalisMenu">
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="container collapse" id="beverages">
+              <div class="row">
+                <h3 class="text-center mt-5 mb-5">Beverages Menu</h3>
+              </div>
+              <div class="row mb-5" id="beveragesMenu">
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="container collapse" id="sweets">
+              <div class="row">
+                <h3 class="text-center mt-5 mb-5">Sweets Menu</h3>
+              </div>
+              <div class="row mb-5" id="sweetsMenu">
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="container collapse" id="icecream">
+              <div class="row">
+                <h3 class="text-center mt-5 mb-5">IceCream Menu</h3>
+              </div>
+              <div class="row mb-5" id="iceCreamMenu">
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="tab-pane" id="pill-tabpanel-03" role="tabpanel" aria-labelledby="pill-tab-03">
+          <section class="contact py-5 bg-light" id="contact">
+            <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                    <h4>Get in touch</h4>
+                    <hr>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="address">  
+                      <h5>Address:</h5>
+                      <ul class="list-unstyled">
+                        <li> T-Mobile Customer Relations</li>
+                        <li> PO Box 37380</li>
+                        <li> Albuquerque, NM 87176-7380</li>
+                      </ul>
+                      <p>Please don't send anything to this address.</p>
+                    </div>
+                    <div class="email">
+                      <h5>Email:</h5>
+                      <ul class="list-unstyled">
+                        <li> info@email.com</li>
+                        <li> info@email.com</li>
+                      </ul>
+                    </div>
+                    <div class="phone">
+                      <h5>Phone:</h5>
+                      <ul class="list-unstyled">
+                        <li> +91- 8800XXXXXX34</li>
+                        <li> +91- 8800XXXXXX34</li>
+                      </ul>
+                    </div>
+                    <hr>
+                    <div class="social">
+                      <ul class="list-inline list-unstyled">
+                        <li class="list-inline-item">
+                          <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                          <a href="#"><i class="fa fa-youtube-play fa-2x"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <form>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <input id="Full Name" name="Full Name" placeholder="Full Name" class="form-control" type="text">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <input id="Mobile No." name="Mobile No." placeholder="Mobile No." class="form-control" required="required" type="text">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <select id="inputState" class="form-control">
+                                <option selected>Choose ...</option>
+                                <option> New Buyer</option>
+                                <option> Auction</option>
+                                <option> Complaint</option>
+                                <option> Feedback</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-12">
+                              <textarea id="comment" name="comment" cols="40" rows="5" placeholder="Your Message"class="form-control"></textarea>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <button type="button" class="btn btn-danger">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
-      <div class="row">
-        <h3 class="text-center mt-5 mb-5">Our Menu</h3>
-      </div>
-      <section>
-        <div class="container">
-          <div class="row">
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Biriyani.jpeg" class="card-img-top menuImages" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Biriyanis</h5>
-                <p class="card-text">Select and Order delicious Biriyanis with in wide range Veg and Non veg!</p>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Tiffins.jpeg" class="card-img-top menuImages" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Tiffins</h5>
-                <p class="card-text">Select and Order hot tiffins to start or end your end with refreshment!</p>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Thalis.jpeg" class="card-img-top menuImages" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Thalis</h5>
-                <p class="card-text">Select and Order wide variety of south and North Indian Thali</p>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Beverages.jpeg" class="card-img-top menuImages" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Beverages</h5>
-                <p class="card-text">Select and Order Beverages to cool your body</p>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Sweets.jpeg" class="card-img-top menuImages" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Sweets</h5>
-                <p class="card-text">Select and Order delicious Biriyanis with in wide range Veg and Non veg</p>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\IceCream.jpeg" class="card-img-top menuImages" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Ice Cream</h5>
-                <p class="card-text">Select and Order delicious Biriyanis with in wide range Veg and Non veg</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="container">
-          <div class="row">
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Biriyani.jpeg" class="card-img-top menuImages" alt="...">
-              <h5 class="card-title">Chicken Biriyani</h5>
-              <div class="card-price">
-                <span class="price">$15.00</span>
-                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Tiffins.jpeg" class="card-img-top menuImages" alt="...">
-              <h5 class="card-title">Mutton Biriyani</h5>
-              <div class="card-price">
-                <span class="price">$15.00</span>
-                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Thalis.jpeg" class="card-img-top menuImages" alt="...">
-              <h5 class="card-title">Prawns Biriyani</h5>
-              <div class="card-price">
-                <span class="price">$15.00</span>
-                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Beverages.jpeg" class="card-img-top menuImages" alt="...">
-              <h5 class="card-title">Egg Biriyani</h5>
-              <div class="card-price">
-                <span class="price">$15.00</span>
-                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\Sweets.jpeg" class="card-img-top menuImages" alt="...">
-              <h5 class="card-title">Mushroom Biriyani</h5>
-              <div class="card-price">
-                <span class="price">$15.00</span>
-                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="card" style="width: 17rem;">
-              <img src="..\Images\IceCream.jpeg" class="card-img-top menuImages" alt="...">
-              <h5 class="card-title">Vegetable Biriyani</h5>
-              <div class="card-price">
-                <span class="price">$15.00</span>
-                <i class="fa fa-plus add-to-cart pull-right" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <div class="modal fade" id="shoppingCartModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog cart-dialog">
+        <div class="modal-dialog modal-dialog-scrollable cart-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="btn modalCloseButton" style="float:right;" data-bs-dismiss="modal">
+              <h3 style="margin-left:30%">My Cart</h3>
+              <button type="button" class="btn cartCloseButton" data-bs-dismiss="modal">
                 <i class="fa fa-times" aria-hidden="true"></i>
               </button>
             </div>
@@ -223,20 +347,15 @@
               <div class="d-flex justify-content-center align-items-center">
                 <div class="card">
                   <div class="sidebar" id="sidebar">
-                    <!-- <div class="sidebar-close">
-                      <i class="fa fa-times" aria-hidden="true"></i>
-                    </div> -->
                     <div class="cart-menu">
-                        <h1>My Cart</h1>
-                        <div class="cart-tems">test 1</div>
+                        <div class="cart-tems"></div>
                     </div>
                     <div class="sidebar--footer">
                       <div class="total--amount">
-                        <h5>Total</h5>
-                        <div class="cart-total">$0.00</div>
+                        <h5>Total<span class="cart-total pull-right">$0.00</span></h5>
                       </div>
-                      <button class="checkout-btn">checkout</button>
                     </div>
+                    <button type="submit" class="btn btn-dark checkout-btn pull-right">Checkout</button>
                   </div>
                 </div>
               </div>
@@ -244,7 +363,7 @@
           </div>
         </div>
       </div>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -255,16 +374,16 @@
             <div class="modal-body">
               <div class="d-flex justify-content-center align-items-center">
                 <div class="card">
-                  <ul class="nav nav-pills mb-3 loginFormNavPills" id="pills-tab" role="tablist">
-                    <li class="nav-item text-center loginNavItem">
-                      <a class="nav-link btl" id="pills-home-tab" data-toggle="pill" onclick="LoginOrResiterForm(this)" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Login</a>
+                  <ul class="nav nav-pills justify-content-center" role="tablist">
+                    <li class="nav-item loginNavPills">
+                      <a class="nav-link active" id="pill-tab-0" data-bs-toggle="pill" href="#pill-tabpanel-0" role="tab" aria-controls="pill-tabpanel-0" aria-selected="true">Login</a>
                     </li>
-                    <li class="nav-item text-center loginNavItem">
-                      <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" onclick="LoginOrResiterForm(this)" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Register</a>
+                    <li class="nav-item loginNavPills">
+                      <a class="nav-link" id="pill-tab-1" data-bs-toggle="pill" href="#pill-tabpanel-1" role="tab" aria-controls="pill-tabpanel-1" aria-selected="false">Register</a>
                     </li>
                   </ul>
-                  <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <div class="tab-content py-3 mt-2">
+                    <div class="tab-pane active" id="pill-tabpanel-0" role="tabpanel" aria-labelledby="pill-tab-0">
                       <form class="form loginForm px-4" onsubmit="loginSubmit()">
                         <input type="text" id="email" name="" class="form-control" placeholder="Email *" onchange="loginFormValidation(this)" required>
                         <input type="password" id="password" name="" class="form-control" placeholder="Password *" onchange="loginFormValidation(this)" required>
@@ -279,15 +398,15 @@
                         <button type="submit" class="btn btn-dark btn-block" id="loginButton" style="float:right;" disabled>Login</button>
                       </form>
                     </div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                      <form class="form loginForm px-4">
-                        <input type="text" name="" class="form-control" placeholder="Name">
-                        <input type="text" id="registerEmail" name="" class="form-control" placeholder="Email">
-                        <input type="text" id="registerPhone" name="" class="form-control" placeholder="Phone">
-                        <input type="text" id="registerPassword" name="" class="form-control" placeholder="Password">
-                        <button class="btn btn-dark btn-block" id="Signup" style="float:right;">Signup</button>
+                    <div class="tab-pane" id="pill-tabpanel-1" role="tabpanel" aria-labelledby="pill-tab-1">
+                      <form class="form loginForm px-4" onsubmit="registerSubmit(event)">
+                        <input type="text" id="registerName" name="" class="form-control" placeholder="Name" required>
+                        <input type="text" id="registerEmail" name="" class="form-control" placeholder="Email" required>
+                        <input type="text" id="registerPhone" name="" class="form-control" placeholder="Phone" required>
+                        <input type="text" id="registerPassword" name="" class="form-control" placeholder="Password" required>
+                        <button type="submit" class="btn btn-dark btn-block" id="SignupButton" style="float:right;">Signup</button>
                       </form>
-                    </div>    
+                    </div>
                   </div>
                 </div>
               </div>
