@@ -313,7 +313,8 @@ function registerSubmit(event){
     }
 }
 
-function loginSubmit(){
+function loginSubmit(event){
+    event.preventDefault();
     var loginName = document.getElementById("email").value;
     document.getElementById("loginName").innerHTML = loginName;
     document.getElementById('loginButton').insertAdjacentHTML('afterend', `<span id="successMessage" class="mt-5" style="display: none; color:#198754">Login Successful!</span>`)
