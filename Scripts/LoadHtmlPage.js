@@ -1,5 +1,4 @@
-MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-var observer = new MutationObserver(function(mutations, observer) {
+document.addEventListener('DOMContentLoaded', () => {
     const addCartToButtons = document.querySelectorAll('.add-to-cart');
     const cartItemCount = document.querySelector('.cart-icon .cartItems');
     const cartItemsList = document.querySelector('.cart-tems');
@@ -73,11 +72,6 @@ var observer = new MutationObserver(function(mutations, observer) {
         }  
     })
 });
-// Register the element root you want to look for changes
-observer.observe(document, {
-  subtree: true,
-  attributes: true
-});
 
 fetch("https://sivapriyapeta.github.io/food_application_api/menu.json")
     .then((res) => {
@@ -122,39 +116,20 @@ const urls = [
     'https://sivapriyapeta.github.io/food_application_api/sweetsMenu.json',
     'https://sivapriyapeta.github.io/food_application_api/icecreamsMenu.json'
 ];
-
-Promise.all(urls.map(url =>
-        fetch(url, {cache: 'no-store'})
-            .then(checkStatus)  // check the response of our APIs
-            .then(parseJSON)    // parse it to Json
-            .catch(error => console.log('There was a problem!', error))
-        ))
-        .then(data => { console.log(data)
-            // assign to requested URL as define in array with array index.
-            const biryanisMenu = data[0];
-            const tiffinsMenu = data[1];
-            const thalisMenu = data[2];
-            const beveragesMenu = data[3];
-            const sweetsMenu = data[4];
-            const icecreamMenu = data[5];
-            data[0].Biriyani_Menu.forEach(SubMenuElements);
-            data[1].Tiffins_Menu.forEach(SubMenuElements);
-            data[2].Thalis_Menu.forEach(SubMenuElements);
-            data[3].Beverages_Menu.forEach(SubMenuElements);
-            data[4].Sweets_Menu.forEach(SubMenuElements);
-            data[5].IceCream_Menu.forEach(SubMenuElements);
-        })
-function checkStatus(response) {
-    if (response.ok) {
-        return Promise.resolve(response);
-    } else {
-        return Promise.reject(new Error(response.statusText));
-    }
-}
-
-function parseJSON(response) {
-    return response.json();
-}
+urls.forEach((url) => {
+    fetch(url)
+    .then((res) => {
+        if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+    })
+    .then(data => {
+                    
+                data.Sub_Menu.forEach(SubMenuElements);
+                })
+    .catch((error) => console.error("Unable to fetch data:", error));
+})
 
 document.addEventListener('DOMContentLoaded', () => {
 const categoryCheckboxes = document.querySelectorAll(".category-filter");
